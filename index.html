@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTocut - Online-Terminbuchung</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="booking-container">
+        <h1>Termin buchen</h1>
+        
+        <div id="bookingSystem" class="booking-system">
+            <div class="service-selection">
+                <h2>1. Service und Stylist auswählen</h2>
+                <div class="form-group">
+                    <label for="serviceSelect">Service:</label>
+                    <select id="serviceSelect" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="1">Haarschnitt Damen (45 min)</option>
+                        <option value="2">Haarschnitt Herren (30 min)</option>
+                        <option value="3">Waschen, Schneiden, Föhnen (60 min)</option>
+                        <option value="4">Farbe (120 min)</option>
+                        <option value="5">Beratung (15 min)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="staffSelect">Stylist:</label>
+                    <select id="staffSelect" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="1">Shaker</option>
+                        <option value="2">Miguel wenn Glatze</option>
+                        <option value="3">Etc</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="date-selection">
+                <h2>2. Datum und Uhrzeit wählen</h2>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button class="prev-month">&lt;</button>
+                        <span class="month-nav">Mai 2025</span>
+                        <button class="next-month">&gt;</button>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-weekdays">
+                            <div class="weekday">Mo</div>
+                            <div class="weekday">Di</div>
+                            <div class="weekday">Mi</div>
+                            <div class="weekday">Do</div>
+                            <div class="weekday">Fr</div>
+                            <div class="weekday">Sa</div>
+                            <div class="weekday">So</div>
+                        </div>
+                        <div class="calendar-days">
+                            <!-- Beispielhafte Tage - werden dynamisch gefüllt -->
+                            <div class="calendar-day prev-month">30</div>
+                            <div class="calendar-day">1</div>
+                            <div class="calendar-day">2</div>
+                            <div class="calendar-day">3</div>
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day">5</div>
+                            <div class="calendar-day unavailable">6</div>
+                            <div class="calendar-day">7</div>
+                            <div class="calendar-day">8</div>
+                            <div class="calendar-day">9</div>
+                            <!-- Weitere Tage hier -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="date-picker-container">
+                    <label for="datePicker">Gewähltes Datum:</label>
+                    <input type="date" id="datePicker" required>
+                </div>
+                
+                <div class="time-slots-container">
+                    <h3>Verfügbare Zeiten:</h3>
+                    <div id="timeSlots" class="time-slots">
+                        <!-- Zeitslots werden dynamisch eingefügt -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-details">
+                <h2>3. Ihre Kontaktdaten</h2>
+                <div class="form-group">
+                    <label for="clientName">Name:</label>
+                    <input type="text" id="clientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">E-Mail:</label>
+                    <input type="email" id="clientEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Telefon:</label>
+                    <input type="tel" id="clientPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientNotes">Anmerkungen (optional):</label>
+                    <textarea id="clientNotes" rows="3"></textarea>
+                </div>
+                <button id="bookButton" class="book-button">Termin buchen</button>
+            </div>
+        </div>
+        
+        <div id="confirmation" class="confirmation" style="display: none;">
+            <h2>Vielen Dank für Ihre Buchung!</h2>
+            <div class="confirmation-details">
+                <p>Ihr Termin wurde bestätigt:</p>
+                <div class="detail-item">
+                    <strong>Datum:</strong> <span id="confirmDate"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Uhrzeit:</strong> <span id="confirmTime"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Service:</strong> <span id="confirmService"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>Stylist:</strong> <span id="confirmStylist"></span>
+                </div>
+            </div>
+            <p>Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.</p>
+            <button id="newBookingBtn" class="new-booking-btn">Neuen Termin buchen</button>
+        </div>
+    </div>
+    
+    <script src="js/booking.js"></script>
+</body>
+</html>
