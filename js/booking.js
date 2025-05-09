@@ -119,6 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
     }
+    // Lade-Indikator anzeigen
+    timeSlotsContainer.innerHTML = '<div class="loading"><div class="loading-spinner"></div>Lade verfügbare Termine...</div>';
     
     // Funktion zum Rendern der Zeitslots
     function renderTimeSlots(slots) {
