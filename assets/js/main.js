@@ -110,6 +110,28 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
+// Funktion zum Ersetzen von nicht vorhandenen Bildern mit Platzhaltern
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            // Extrahiere Breite und Höhe aus dem Dateinamen oder verwende Standards
+            let width = 800;
+            let height = 600;
+            
+            // Versuche, Breite und Höhe aus der URL zu extrahieren
+            const match = this.src.match(/\/(\d+)\/(\d+)/);
+            if (match) {
+                width = match[1];
+                height = match[2];
+            }
+            
+            // Ersetze mit einem Platzhalterbild
+            this.src = `https://via.placeholder.com/${width}x${height}?text=TimeTocut`;
+            this.onerror = null; // Verhindert endlose Schleifen
+        };
+    });
+});
+
 prevBtn.addEventListener('click', () => {
     currentIndex--;
     if (currentIndex < 0) {
