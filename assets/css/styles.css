@@ -192,7 +192,7 @@ header.compact {
   display: flex;
   align-items: center;
   position: relative;
-  background: url('/api/placeholder/1600/900') center/cover no-repeat;
+  background: url('https://via.placeholder.com/1600x900?text=TimeTocut') center/cover no-repeat;
   margin-top: 80px;
   overflow: hidden;
 }
@@ -564,7 +564,7 @@ header.compact {
 /* Booking */
 .booking {
   text-align: center;
-  background: url('/api/placeholder/1600/600') center/cover no-repeat;
+  background: url('https://via.placeholder.com/1600x600?text=TimeTocut') center/cover no-repeat;
   position: relative;
   color: white;
 }
